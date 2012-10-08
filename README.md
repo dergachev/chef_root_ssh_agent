@@ -16,7 +16,8 @@ and consequently will have access your running ssh-agent instance.
 ### <a name="recipes-env-keep"></a> env-keep
 
 Adds the following to `/etc/sudoers.d/root_ssh_agent`: 
-    Defaults env_keep += "SSH_AUTH_SOCK" 
+
+    Defaults env_keep += "SSH_AUTH_SOCK"
 
 Because it works by changing /etc/sudoers.d, this recipe will not affect the current shell session within which
 chef-client/chef-solo are running. Use `recipe[root_ssh_agent::ppid]` if you need to allow agent forwarding during
@@ -60,11 +61,9 @@ See the following resources:
 * http://stackoverflow.com/questions/7211287/use-ssh-keys-with-passphrase-on-a-vagrantchef-setup
 * http://serverfault.com/questions/107187/sudo-su-username-while-keeping-ssh-key-forwarding#answer-118932
 
-SSH forwarding breaks when the vagrant user runs `chef-solo` as root, unless the following is in place:
-    `echo 'Defaults env_keep+="SSH_AUTH_SOCK"' > /etc/sudoers.d/env_keep_sshauth`
-
 Vagrant boxes are supposed to include the following in sudoers, in practice they don't.
 See https://github.com/mitchellh/vagrant/issues/1151
+This can be fixed by including `recipe[root_ssh_agent::env_keep]` when building a base vagrant box.
 
 Debugging tips: 
 * `sudo su -` resets all env variables, no matter what /etc/sudoers env_keep specifies. "sudo su" or "sudo su root" doesn't.
