@@ -44,10 +44,6 @@ Nothing specific.
 
 ## <a name="recipes"></a> Recipes
 
-### <a name="recipes-default"></a> default
-
-This recipe is a no-op and does nothing.
-
 ### <a name="recipes-env-keep"></a> env-keep
 
 Adds the following to `/etc/sudoers.d/root_ssh_agent`: 
