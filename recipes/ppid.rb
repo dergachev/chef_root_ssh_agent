@@ -56,3 +56,8 @@ ruby_block "Give root access to the forwarded ssh agent" do
   end
   action :create
 end
+
+# Uncomment to require that a running ssh-agent has at least one key
+# bash "verify agent forwarding" do
+#   code "ssh-add -l" #returns 0 only if an identity is found
+# end
