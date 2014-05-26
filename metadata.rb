@@ -1,4 +1,4 @@
-name       "chef_root_ssh_agent"
+name             "root_ssh_agent"
 maintainer       "Alex Dergachev"
 maintainer_email "alex@evolvingweb.ca"
 license          "Apache 2.0"
