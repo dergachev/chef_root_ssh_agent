@@ -8,6 +8,7 @@ This is necessary for vagrant & chef-solo to work with ssh-agent forwarding.
 ## Installation
 
 Clone this repository into your `CHEF-REPO/cookbooks/root_ssh_agent`:
+
     # Be sure to name the cookbook "root_ssh_agent", not "chef_root_ssh_agent"
     git clone git@github.com:dergachev/chef_root_ssh_agent.git root_ssh_agent
 
